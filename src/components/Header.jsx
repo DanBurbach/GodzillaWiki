@@ -1,25 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 function Header() {
+
+  const headerStylesLeft = {
+    listStyleType: 'none',
+    overflow: 'hidden',
+    backgroundColor: '#333',
+    fontFamily: 'sans-serif',
+    display: 'flex-start',
+  };
+
   return (
-    <div>
-      <Grid container>
-        <Grid item xs>
-          <Link to="/">Godzilla Home</Link> |
-          </Grid>
-          <Grid item xs>
-            <Link to="/newticket">Create Ticket</Link>
-          </Grid>
+    <div style={headerStylesLeft}>
+      <Navbar fluid collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Link to="/">Home</Link>
+          </Navbar.Brand>
+          <Link to="/godzilla">Godzilla</Link>
+          <Link to="/mothera">Mothera</Link>
+          <Link to="/rodan">Rodan</Link>
+          <Link to="/kingg">King Ghidorah</Link>
+          <Link to="/mechagodzilla">Mechagodzilla</Link>
+          <Link to="/gigan">Gigan</Link>
+          <Link to="/kingkong">King Kong</Link>
+          <Link to="/hedorah">Hedorah</Link>
+        </Navbar.Header>
+      </Navbar>
+    </div>
+  );
+}
 
-        </Grid>
-        <hr/>
-      </div>
-    );
-  }
-
-  export default Header;
+export default Header;

@@ -1,5 +1,5 @@
 import React from 'react';
-import TicketList from './TicketList';
+import MainSplash from './MainSplash';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import NewTicketForm from './NewTicketForm';
@@ -12,7 +12,7 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route exact path='/' component={TicketList} />
+        <Route exact path='/' component={MainSplash} />
         <Route path='/newticket' component={NewTicketForm} />
         <Route component={Error404} />
       </Switch>
