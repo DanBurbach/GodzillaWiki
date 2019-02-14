@@ -1,21 +1,29 @@
-import React from "react";
-import TicketList from "./TicketList";
-import Header from "./Header";
+import React from 'react';
+import TicketList from './TicketList';
+import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import NewTicketForm from './NewTicketForm';
 import Error404 from './Error404';
+import Main from './Main';
+import Footer from './Footer';
 
 function App() {
-    return (
-        <div>
-            <Header />
-            <Switch>
-                <Route exact path='/' component={TicketList} />
-                <Route path='/newticket' component={NewTicketForm} />
-                <Route component={Error404} />
-            </Switch>
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={TicketList} />
+        <Route path='/newticket' component={NewTicketForm} />
+        <Route component={Error404} />
+      </Switch>
+      <div>
+        <Main />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default App;
