@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 var masterGodzilla = [
   {
@@ -12,8 +14,6 @@ var masterGodzilla = [
 
     history3: 'Godzillas allegiance and motivations have changed from film to film to suit the needs of the story. Although Godzilla does not like humans, it will fight alongside humanity against common threats. However, it makes no special effort to protect human life or property and will turn against its human allies on a whim. It is not motivated to attack by predatory instinct: it does not eat people and instead sustains itself on nuclear radiation and an omnivorous diet. When inquired if Godzilla was good or bad, producer Shogo Tomiyama likened it to a Shinto - God of Destruction - which lacks moral agency and cannot be held to human standards of good and evil. He totally destroys everything and then there is a rebirth. Something new and fresh can begin.',
 
-    img: './assets/images/GodzillaSplash.jpg',
-
     further:'https://en.wikipedia.org/wiki/Godzilla'
   }
 ];
@@ -22,9 +22,8 @@ function Godzilla() {
   return (
     <div>
       {masterGodzilla.map((ticket, index) =>
-        <Footer name={ticket.name}
+        <MainSplash name={ticket.name}
           height={ticket.height}
-          img={ticket.img}
           history1={ticket.history1}
           history2={ticket.history2}
           history3={ticket.history3}
@@ -34,5 +33,14 @@ function Godzilla() {
     </div>
   );
 }
+
+Godzilla.propTypes = {
+  name: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
+  history1: PropTypes.string.isRequired,
+  history2: PropTypes.string.isRequired,
+  history3: PropTypes.string.isRequired,
+  further: PropTypes.string.isRequired
+};
 
 export default Godzilla;
